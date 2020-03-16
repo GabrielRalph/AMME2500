@@ -55,32 +55,32 @@ body{
   #car{
     width: calc(var(--factor)*10vw);
     position: fixed;
-    bottom: 95px;
-    left: calc(var(--left-pos) - var(--factor)*10vw);
+    bottom: calc(10vh - 0.45vh * var(--factor));
+    left: calc(var(--left-pos) - var(--factor)*9.7vw);
     z-index: 10;
   }
   .road{
     position: fixed;
-    top: calc(100vh - 100px);
+    top: 90vh;
     left: 0;
     width: 100vw;
-    height: calc(10vh + 100px);
+    height: 10vh;
     background:#040404;
   }
   .road div{
     position: fixed;
-    top: calc(100vh - 100px);
+    top: 90vh;
     left: calc(14vw * var(--factor));
     width: calc(17vw * var(--factor));
-    height: 100px;
+    height: 10vh;
     background: #e4e1ff;
-    height: 100%;
   }
   .road div:last-child{
     position: fixed;
-    top: calc(100vh - 100px);
+    top: 85vh;
     background: red;
     left: calc(48vw * var(--factor) - 1px);
     width: 2px;
+    height: 5vh;
   }
 </style>
