@@ -38,6 +38,7 @@
     </div>
     <div class = "road">
       <div></div>
+      <div></div>
     </div>
   </body>
 </html>
@@ -53,7 +54,7 @@
     width: calc(var(--factor)*5vw);
     position: fixed;
     bottom: 95px;
-    left: var(--left-pos);
+    left: calc(var(--left-pos) - var(--factor)*5vw);
     z-index: 10;
   }
   .road{
@@ -72,5 +73,12 @@
     height: 100px;
     background: #e4e1ff;
     height: 100%;
+  }
+  .road div:last-child{
+    position: fixed;
+    top: calc(100vh - 100px);
+    background: red;
+    left: calc(48vw * var(--factor) - 1px);
+    width: 2px;
   }
 </style>

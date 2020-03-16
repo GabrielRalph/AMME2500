@@ -58,8 +58,8 @@ var  res2 = simulate_stop(25.6, 'A');
     ykeys: ['ma', 'mb'],
     pointSize: 0,
     labels: ['Modal A', 'Modal B'],
+    resize: true,
     parseTime: false,
-    xLabels: 'second',
     yLabelFormat: (y)=>{return y + ' m'}
   })
   new Morris.Line({
@@ -69,9 +69,10 @@ var  res2 = simulate_stop(25.6, 'A');
     ykeys: ['ma', 'mb'],
     pointSize: 0,
     labels: ['Modal A', 'Modal B'],
+    resize: true,
     parseTime: false,
     xLabels: 'second',
-    yLabelFormat: (y)=>{return y + ' m'}
+    yLabelFormat: (y)=>{return y + ' m/s'}
   })
   new Morris.Line({
     element: 'graphdiv3',
@@ -81,9 +82,9 @@ var  res2 = simulate_stop(25.6, 'A');
     pointSize: 0,
     labels: ['Modal A', 'Modal B'],
     parseTime: false,
-    xLabels: 'second',
+    resize: true,
     smooth: false,
-    yLabelFormat: (y)=>{return y + ' = mu'}
+    yLabelFormat: (y)=>{return 'μ = ' + y}
   })
   new Morris.Line({
     element: 'graphdiv4',
@@ -93,9 +94,11 @@ var  res2 = simulate_stop(25.6, 'A');
     pointSize: 0,
     labels: ['Modal A', 'Modal B'],
     parseTime: false,
-    xLabels: 'second',
+    goals: [48],
+    resize: true,
     smooth: false,
-    yLabelFormat: (y)=>{return y + ' m/s'}
+    goalLineColors: ['#FF0000'],
+    yLabelFormat: (y)=>{return y + ' m'}
   })
 
 
