@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A1</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <div id = "graphdiv" style = "width: 48vw; height: 40vh">
+          </div>
+        </td>
+        <td>
+          <div id = "graphdiv2" style = "width: 48vw; height: 40vh">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id = "graphdiv3" style = "width: 49vw; height: 40vh">
+          </div>
+        </td>
+        <td>
+          <div id = "graphdiv4" style = "width: 49vw; height: 40vh">
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+
+    <div id = "car">
+      <img src = "car.svg" />
+    </div>
+    <div class = "road">
+      <div></div>
+    </div>
+  </body>
+</html>
+<script src = "main.js"></script>
+
+<style>
+
+:root{
+  --left-pos: 0;
+  --factor: 5;
+}
+  #car{
+    width: calc(var(--factor)*5vw);
+    position: fixed;
+    bottom: 95px;
+    left: var(--left-pos);
+    z-index: 10;
+  }
+  .road{
+    position: fixed;
+    top: calc(100vh - 100px);
+    left: 0;
+    width: 100vw;
+    height: calc(10vh + 100px);
+    background:#040404;
+  }
+  .road div{
+    position: fixed;
+    top: calc(100vh - 100px);
+    left: calc(14vw * var(--factor));
+    width: calc(17vw * var(--factor));
+    height: 100px;
+    background: #e4e1ff;
+    height: 100%;
+  }
+</style>

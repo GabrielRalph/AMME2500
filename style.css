@@ -1,0 +1,7 @@
+#car{
+  width:20px;
+  height:20px;
+  position: fixed;
+  --left-pos: 0;
+  background: #140990;
+}
