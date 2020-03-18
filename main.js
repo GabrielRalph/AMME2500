@@ -15,24 +15,18 @@ function Car(car){
 function simulate_stop(v0, model){
     var v = [v0];
     var x = [0];
-    var idx = 0;
     var mu = [];
     var t = [0];
-    while (v[idx] > 0){
-      if (x[idx] > 14 && x[idx] < 31 && model == 'B'){
-          mu.push(0.12 + 0.07*Math.exp(0.06*v[idx]))
-      }else{
-          mu.push(0.7)
-      }
-      var newv = v[idx] - g*dt*mu[idx]
-      var newx = x[idx] + dt*v[idx];
-      v.push(newv);
-      x.push(newx);
+    for(idx = 0; v[idx] > 0; idx++){
+      mu.push(x[idx] > 14 && x[idx] < 31 && model == 'B'?0.12 + 0.07*Math.exp(0.06*v[idx]):0.7)
+      v.push(v[idx] - g*dt*mu[idx]);
+      x.push(x[idx] + dt*v[idx + 1]);
       t.push(idx*dt);
-      idx = idx + 1;
     }
     return {t, x, v, mu}
 }
+
+
 var data_ab = [];
 for(var i = 20; i <= 30; i += 0.1){
   var mb = simulate_stop(i, 'B');
