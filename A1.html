@@ -4,11 +4,48 @@
     <title>Home</title>
   </head>
   <body>
-    <img src = "stop-distance-vs-initial-velocit.svg" />
+    <canvas id="oscilloscope" width="900px" height="700px"></canvas>
+    <div class = "pendulum-box">
+      <div id = "rope">
+        <div class = "tyre">
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-<script src = "main.js"></script>
-
 <style>
-
+  body{
+    margin: 5vh 5vw;
+    background: black;
+  }
+  .pendulum-box{
+    width: 1px;
+    height: 90vh;
+    padding: 0 calc(45vw - 0.5px);
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+  }
+  .pendulum-box > div{
+    background: green;
+    width: 1px;
+    height: 500px;
+    --theta: 20deg;
+    transform-origin: top;
+    transform: rotate(var(--theta));
+    position: relative;
+    border:2.5px solid white;
+  }
+  .tyre{
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    border: 5px solid white;
+    position: absolute;
+    bottom: -97px;
+    left: -50px;
+    background: #440377;
+  }
 </style>
+<script src = "pendulum.js"></script>
