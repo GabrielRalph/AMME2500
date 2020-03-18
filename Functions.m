@@ -21,20 +21,35 @@ for i = velocity_range
     end
     idx = idx + 1;
 end
-f = figure();
+q1iii = figure();
 plot(velocity_range, stop_distance_A, velocity_range, stop_distance_B);
 title('Stopping distance');
-ylabel('Stopping distance (m)');
-xlabel('Initial velocity (m/s)');
-refline([0 48]);
-saveas(f, 'stop-distance-vs-initial-velocit.svg');
+ylabel('x position at stop (m)');
+xlabel('initial velocity (m/s)');
+r = refline([0 48]);
+r.Color = 'r';
+legend('Model A', 'Model B');
+saveas(q1iii, 'q1-iii.svg');
 
 dataA = simulateStop(soln_A(1), 'A');
 dataB = simulateStop(soln_B(1), 'B');
-f2 = figure();
+q1iv = figure('position', [0 0 210*4 297*4]);
 subplot(3,1,1);
 plot(dataA(:, 1), dataA(:, 2),dataB(:, 1), dataB(:, 2));
+title('Position at time t');
+ylabel('x position (m)');
+xlabel('time (s)');
+legend('Model A', 'Model B');
 subplot(3,1,2);
 plot(dataA(:, 1), dataA(:, 3),dataB(:, 1), dataB(:, 3));
+title('Velocity at time t');
+ylabel('x velocity (m/s)');
+xlabel('time (s)');
+legend('Model A', 'Model B');
 subplot(3,1,3);
 plot(dataA(:, 2), dataA(:, 4),dataB(:, 2), dataB(:, 4));
+title('Mu at x position');
+ylabel('\mu');
+xlabel('x position (m)');
+legend('Model A', 'Model B');
+saveas(q1iv, 'q1-iv.svg');
