@@ -1,6 +1,9 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{svg}
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 \title{A1}
@@ -13,7 +16,7 @@
 
 \section{}
 \subsection{}
-\includesvg[width = \textwidth]{FBD-A1-Q1.svg}
+\includesvg[width = \textwidth]{q1-i.svg}
 $F_x = mg\mu$\\ \\
 $ma_x = mg\mu$\\ \\
 $a_x = g\mu$\\ \\
@@ -27,9 +30,41 @@ further more $v = \frac{dx}{dt}$\\ \\
 Let $dx = x_{n1} - x_{n0}$ \\ \\
 $v_{n1} dt = x_{n1} - x_{n0}$\\ \\
 $x_{n1} = x_{n0} + v_{n1}dt$\\ \\
-% \begin{lstlisting}
-\lstinputlisting{simulateStop.m}
-% \end{lstlisting}
 \subsection{}
-\includesvg[width = \textwidth]{stop-distance-vs-initial-velocit.svg}
+\lstinputlisting{simulateStop.m}
+\subsection{}
+\includesvg[width = \textwidth]{q1-iii.svg}
+\subsection{}
+\includesvg[width = \textwidth]{q1-iv.svg}
+\section{}
+\subsection{}
+$a_t = 0.5e^t$\\ \\
+$dv = 0.5e^t dt$\\ \\
+$\int dv_t = \int 0.5e^t dt$\\ \\
+$v_t = 0.5e^t + C_1$\\ \\
+Using the base case $v_t = \theta = t = 0$\\ \\
+$0 = 0.5 + C_1$\\ \\
+$C_1 = -0.5$\\ \\
+$\therefore v_t = 0.5(e^t -1)$ \\ \\
+At $t = 3$ \\ \\
+$v_t = 0.5(e^3 - 1)$\\ \\
+\hl{$v = 9.5428 m/s$}\\ \\
+$a_t = 0.5e^3 = 10.0428$\\ \\
+But we must also consider the centripetal acceleration $a_c = \cfrac{v^2}{r}$ \\ \\
+$a_c = \cfrac{9.5428}{100} = 0.9106$\\ \\
+$a = \sqrt{a_c^2 + a_t^2}= \sqrt{0.9106^2 + 10.0428^2}$\\ \\
+\hl{$a = 10.0840$}
+\subsection{}
+$v = \frac{ds}{dt}$\\ \\
+$\int ds = \int 0.5(e^t - 1)dt$\\ \\
+$s = 0.5(e^t - t + C_2)$\\ \\
+Using the base case $\theta = s = t = 0$\\ \\
+$0 = 1 - 0 + C_2$\\ \\
+$C_2 = -1$\\ \\
+$\therefore s = 0.5(e^t - t-1)$\\ \\
+$s = \theta r$\\ \\
+$\theta = \cfrac{e^t - t - 1}{200}$\\ \\
+$\theta = \frac{\pi}{6}$\\ \\
+Using matlab to solve $\frac{\pi}{6} = \cfrac{e^t - t - 1}{200}$ returns the following. \\ 
+
 \end{document}
