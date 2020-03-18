@@ -1,5 +1,4 @@
-
-function r = simulate_stop(v0, model)
+function r = simulateStop(v0, model)
     %Define constants used
     dt = 0.01;
     g = 9.81;

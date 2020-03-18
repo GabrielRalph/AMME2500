@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{svg}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 \title{A1}
 \author{Gabriel Ralph \\ 470205736}
@@ -11,6 +12,7 @@
 \maketitle
 
 \section{}
+\subsection{}
 \includesvg[width = \textwidth]{FBD-A1-Q1.svg}
 $F_x = mg\mu$\\ \\
 $ma_x = mg\mu$\\ \\
@@ -25,5 +27,8 @@ further more $v = \frac{dx}{dt}$\\ \\
 Let $dx = x_{n1} - x_{n0}$ \\ \\
 $v_{n1} dt = x_{n1} - x_{n0}$\\ \\
 $x_{n1} = x_{n0} + v_{n1}dt$\\ \\
-
+% \begin{lstlisting}
+\lstinputlisting{simulateStop.m}
+% \end{lstlisting}
+\subsection{}
 \end{document}
