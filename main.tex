@@ -53,7 +53,7 @@ $a_t = 0.5e^3 = 10.0428$\\ \\
 But we must also consider the centripetal acceleration $a_c = \cfrac{v^2}{r}$ \\ \\
 $a_c = \cfrac{9.5428}{100} = 0.9106$\\ \\
 $a = \sqrt{a_c^2 + a_t^2}= \sqrt{0.9106^2 + 10.0428^2}$\\ \\
-\hl{$a = 10.0840$}
+\hl{$a = 10.0840 m/s^2$}
 \subsection{}
 $v = \frac{ds}{dt}$\\ \\
 $\int ds = \int 0.5(e^t - 1)dt$\\ \\
@@ -65,6 +65,12 @@ $\therefore s = 0.5(e^t - t-1)$\\ \\
 $s = \theta r$\\ \\
 $\theta = \cfrac{e^t - t - 1}{200}$\\ \\
 $\theta = \frac{\pi}{6}$\\ \\
-Using matlab to solve $\frac{\pi}{6} = \cfrac{e^t - t - 1}{200}$ returns the following. \\ 
+Using matlab to solve $\frac{\pi}{6} = \cfrac{e^t - t - 1}{200}$ returns the following. \\ \\
+$ t = \cfrac{100\pi}{3} - lambertw(-1, -e^{- \frac{100\pi}{3} - 1}) - 1 = 4.7043$ \\ \\
+\lstinputlisting{A1Q2ii.m}
+Substituting $t = 4.7043$ into the derived equations for $v_t$, $a_t$ and $a_c$ gives the following\\ \\
+\hl{$v = 54.712 m/s$} \\ \\
+\hl{$a = 62.805 m/s^2$} \\ \\
+
 
 \end{document}
