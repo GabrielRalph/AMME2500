@@ -7,7 +7,7 @@
     <canvas id="oscilloscope" width="900px" height="700px"></canvas>
     <div class = "pendulum-box">
       <div id = "rope">
-        <div class = "tyre">
+        <div id = "tyre">
 
         </div>
       </div>
@@ -28,22 +28,23 @@
     left: 5vw;
   }
   .pendulum-box > div{
-    background: green;
+    background: white;
     width: 1px;
-    height: 500px;
+    --r: 0px;
+    height: calc(500px - var(--r));
     --theta: 20deg;
     transform-origin: top;
     transform: rotate(var(--theta));
     position: relative;
     border:2.5px solid white;
   }
-  .tyre{
+  #tyre{
     width: 90px;
     height: 90px;
     border-radius: 50px;
     border: 5px solid white;
     position: absolute;
-    bottom: -97px;
+    bottom:  -97px;
     left: -50px;
     background: #440377;
   }

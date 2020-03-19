@@ -27,6 +27,29 @@ class Pendulum{
     return this.theta2
   }
 }
+class Ball{
+  constructor(g){
+    this.g = -5;
+    this.v = 0;
+    this.x = 0;
+  }
+  itterate(dt){
+    this.v += this.g*dt;
+    if(this.x + this.v*dt < 0){
+      this.x = 0;
+      if(Math.abs(this.v) < 0.1){
+        this.g = 0;
+      }else{
+        this.g = -5;
+      }
+      this.v *= -0.7;
+    }else{
+      this.g = -5;
+      this.x += this.v*dt;
+    }
+    return this.x
+  }
+}
 
 function runForever(dt, call){
   setTimeout(() => {
@@ -36,18 +59,25 @@ function runForever(dt, call){
 }
 Math.sin(-0.0225)
 var tyreSwing = new Pendulum(4, 30, 4);
+var ball = new Ball(2);
+
+
 console.log(Math.sin(0.1));
 runForever(10, () => {
   var theta = tyreSwing.itterate(0.0005);
+  var r = ball.itterate(0.1);
+  // console.log(r);
   theta *= 180/Math.PI;
   document.getElementById('rope').style.setProperty('--theta', theta + 'deg');
+  document.getElementById('rope').style.setProperty('--r', r*10 + 'px');
 })
 document.body.addEventListener('click', () => {
   tyreSwing.v1 *= -1;
   console.log('x');
 })
 function bounce(){
-  tyreSwing.v1 *= -1;
+  // tyreSwing.v1 *= -1;
+  ball.v = 8;
 }
 
 if (!navigator.getUserMedia) navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||  navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -85,8 +115,8 @@ if (navigator.getUserMedia){
           canvasCtx.fillStyle = "rgb(0, 0, 0)";
           canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-          canvasCtx.lineWidth = 2;
-          canvasCtx.strokeStyle = "rgb(2, 255, 255)";
+          canvasCtx.lineWidth = 5;
+          canvasCtx.strokeStyle = "rgb(168, 103, 219)";
 
           canvasCtx.beginPath();
 
@@ -107,7 +137,7 @@ if (navigator.getUserMedia){
             x += sliceWidth;
           }
           sum = Math.sqrt(sum/bufferLength);
-          if(Math.abs(sum - lastSum)*5 > 100){
+          if(Math.abs(sum - lastSum)*5 > 80){
             console.log(Math.abs(sum - lastSum)*5);
             bounce()
           }
