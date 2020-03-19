@@ -29,7 +29,8 @@ class Pendulum{
 }
 class Ball{
   constructor(g){
-    this.g = -5;
+    this.ginit = g;
+    this.g = this.ginit;
     this.v = 0;
     this.x = 0;
   }
@@ -40,11 +41,11 @@ class Ball{
       if(Math.abs(this.v) < 0.1){
         this.g = 0;
       }else{
-        this.g = -5;
+        this.g = this.ginit;
       }
       this.v *= -0.7;
     }else{
-      this.g = -5;
+      this.g = this.ginit;
       this.x += this.v*dt;
     }
     return this.x
@@ -59,7 +60,7 @@ function runForever(dt, call){
 }
 Math.sin(-0.0225)
 var tyreSwing = new Pendulum(4, 30, 4);
-var ball = new Ball(2);
+var ball = new Ball(-5);
 
 
 console.log(Math.sin(0.1));
@@ -77,7 +78,7 @@ document.body.addEventListener('click', () => {
 })
 function bounce(){
   // tyreSwing.v1 *= -1;
-  ball.v = 8;
+  ball.v = 12;
 }
 
 if (!navigator.getUserMedia) navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||  navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -141,6 +142,9 @@ if (navigator.getUserMedia){
             console.log(Math.abs(sum - lastSum)*5);
             bounce()
           }
+          var size = (90 + sum*5);
+          document.getElementById('tyre').style.setProperty('--size', size + 'px');
+
           lastSum = sum;
           canvasCtx.lineTo(canvas.width, canvas.height / 2);
           canvasCtx.stroke();

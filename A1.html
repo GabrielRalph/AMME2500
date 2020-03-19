@@ -39,13 +39,14 @@
     border:2.5px solid white;
   }
   #tyre{
-    width: 90px;
-    height: 90px;
-    border-radius: 50px;
+    --size: 90px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
     border: 5px solid white;
     position: absolute;
-    bottom:  -97px;
-    left: -50px;
+    bottom:  calc(-0.5 * (10px + var(--size)));
+    left: calc(-0.5 * (10px + var(--size)));
     background: #440377;
   }
 </style>
