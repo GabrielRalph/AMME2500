@@ -3,6 +3,7 @@
 \usepackage{svg}
 \usepackage{soul}
 \usepackage{amsmath}
+\usepackage{wrapfig}
 \usepackage{amssymb}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
@@ -71,6 +72,29 @@ $ t = \cfrac{100\pi}{3} - lambertw(-1, -e^{- \frac{100\pi}{3} - 1}) - 1 = 4.7043
 Substituting $t = 4.7043$ into the derived equations for $v_t$, $a_t$ and $a_c$ gives the following\\ \\
 \hl{$v = 54.712 m/s$} \\ \\
 \hl{$a = 62.805 m/s^2$} \\ \\
-
+\section{}
+\subsection{}
+The tension in the cord at $\theta = 0$ is simply the force the child exerts due to gravity i.e.\\ \\
+$\Sigma F_y = 0 = T - mg$\\ \\
+$T = mg$ \\ \\
+\hl{$T = 294.3N$}
+\subsection{}
+We know that for any given position the sum of kinetic energy and gravitational potential energy will remain constant, such that\\ \\
+$mgh_1 + \frac{1}{2}mv_1^2 = mgh_2 + \frac{1}{2}mv_2^2$\\ \\
+Considering the two positions\\ \\
+1. The tyre is at $\theta_1 = 0$ and hence $h_1 = 0$ and $v_1 = 4m/s$\\ \\
+2. The tyre is at some position $\theta_2$ where $h_2 = L(1 - cos(\theta_2))$ and the tyre has come to a momentary rest such that $v_2 = 0$\\ \\
+$\frac{1}{2}mv_1^2 = mgh_2$\\ \\
+$\frac{1}{2}v_1^2 = gL(1-cos(\theta))$\\ \\
+$cos(\theta) = 1 - \cfrac{v_1^2}{2gL}$\\ \\
+$\theta = cos^{-1}(0.7961)$\\ \\
+\hl{$\theta = 0.65 (rad) = 37.24^{\circ}$}
+\subsection{}
+At the instance where $\theta = 37.24^{\circ}$ \\ \\
+$Fw = mg$\\ \\
+$Fw_c = Fwcos(\theta_2)$\\ \\
+$\Sigma F_c = 0 = T - Fw_c$\\ \\
+$T = mgcos(\theta_2)$\\ \\
+\hl{$T = 234.3N$}
 
 \end{document}
