@@ -60,7 +60,7 @@ function runForever(dt, call){
 }
 Math.sin(-0.0225)
 var tyreSwing = new Pendulum(4, 30, 4);
-var ball = new Ball(-5);
+var ball = new Ball(-8);
 
 
 console.log(Math.sin(0.1));
@@ -78,7 +78,7 @@ document.body.addEventListener('click', () => {
 })
 function bounce(){
   // tyreSwing.v1 *= -1;
-  ball.v = 12;
+  ball.v = 9;
 }
 
 if (!navigator.getUserMedia) navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||  navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -142,7 +142,7 @@ if (navigator.getUserMedia){
             console.log(Math.abs(sum - lastSum)*5);
             bounce()
           }
-          var size = (90 + sum*5);
+          var size = (90 + ball.x*5);
           document.getElementById('tyre').style.setProperty('--size', size + 'px');
 
           lastSum = sum;

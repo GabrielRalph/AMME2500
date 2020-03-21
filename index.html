@@ -8,24 +8,28 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   </head>
   <body>
-    <a href="/A1.html">
+    <!-- <a href="/A1.html"> -->
     <table>
       <tr>
         <td>
+          <h1>Position at time t - x(t)</h1>
           <div id = "graphdiv" style = "width: 48vw; height: 40vh">
           </div>
         </td>
         <td>
+          <h1>Velocity at time t - v(t)</h1>
           <div id = "graphdiv2" style = "width: 48vw; height: 40vh">
           </div>
         </td>
       </tr>
       <tr>
         <td>
+          <h1>Coefficient of friction at x - mu(x)</h1>
           <div id = "graphdiv3" style = "width: 49vw; height: 40vh">
           </div>
         </td>
         <td>
+          <h1>Stopping distance for v0 - x_stop(v_0)</h1>
           <div id = "graphdiv4" style = "width: 49vw; height: 40vh">
           </div>
         </td>
@@ -57,32 +61,37 @@ body{
   #car{
     width: calc(var(--factor)*10vw);
     position: fixed;
-    bottom: calc(10vh - 0.45vh * var(--factor));
+    bottom: calc(5vh - 0.45vh * var(--factor));
     left: calc(var(--left-pos) - var(--factor)*9.7vw);
     z-index: 10;
   }
   .road{
     position: fixed;
-    top: 90vh;
+    top: 95vh;
     left: 0;
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
     background:#040404;
   }
   .road div{
     position: fixed;
-    top: 90vh;
+    top: 95vh;
     left: calc(14vw * var(--factor));
     width: calc(17vw * var(--factor));
-    height: 10vh;
+    height: 5vh;
     background: #e4e1ff;
   }
   .road div:last-child{
     position: fixed;
-    top: 85vh;
+    top: 90vh;
     background: red;
     left: calc(48vw * var(--factor) - 1px);
     width: 2px;
     height: 5vh;
+  }
+  h1{
+    font-family: 'Courier';
+    font-size: 16px;
+    text-align: center;
   }
 </style>
