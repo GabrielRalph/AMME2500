@@ -4,7 +4,13 @@
 \usepackage{soul}
 \usepackage{amsmath}
 \usepackage{wrapfig}
-\usepackage{amssymb}
+\usepackage{amssymb}\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 \title{A1}
@@ -37,6 +43,8 @@ $x_{n1} = x_{n0} + v_{n1}dt$\\ \\
 \includesvg[width = \textwidth]{q1-iii.svg}
 \subsection{}
 \includesvg[width = \textwidth]{q1-iv.svg}
+Check out the live simulation \href{https://amme2500.galetora.com}{Click Me}
+\newpage
 \section{}
 \subsection{}
 $a_t = 0.5e^t$\\ \\
@@ -71,7 +79,8 @@ $ t = \cfrac{100\pi}{3} - lambertw(-1, -e^{- \frac{100\pi}{3} - 1}) - 1 = 4.7043
 \lstinputlisting{A1Q2ii.m}
 Substituting $t = 4.7043$ into the derived equations for $v_t$, $a_t$ and $a_c$ gives the following\\ \\
 \hl{$v = 54.712 m/s$} \\ \\
-\hl{$a = 62.805 m/s^2$} \\ \\
+\hl{$a = 62.805 m/s^2$} 
+\newpage
 \section{}
 \subsection{}
 The tension in the cord at $\theta = 0$ is simply the force the child exerts due to gravity i.e.\\ \\
@@ -79,22 +88,58 @@ $\Sigma F_y = 0 = T - mg$\\ \\
 $T = mg$ \\ \\
 \hl{$T = 294.3N$}
 \subsection{}
+
 We know that for any given position the sum of kinetic energy and gravitational potential energy will remain constant, such that\\ \\
 $mgh_1 + \frac{1}{2}mv_1^2 = mgh_2 + \frac{1}{2}mv_2^2$\\ \\
 Considering the two positions\\ \\
 1. The tyre is at $\theta_1 = 0$ and hence $h_1 = 0$ and $v_1 = 4m/s$\\ \\
-2. The tyre is at some position $\theta_2$ where $h_2 = L(1 - cos(\theta_2))$ and the tyre has come to a momentary rest such that $v_2 = 0$\\ \\
+2. The tyre is at some position $\theta_2$ where $h_2 = L(1 - cos(\theta_2))$ and $v_2 = 0$\\ \\
+\begin{wrapfigure}{r}{0.35\textwidth}
+
+   \includesvg[width = 0.35\textwidth]{A1Q3ii-01.svg}
+\end{wrapfigure}
 $\frac{1}{2}mv_1^2 = mgh_2$\\ \\
 $\frac{1}{2}v_1^2 = gL(1-cos(\theta))$\\ \\
-$cos(\theta) = 1 - \cfrac{v_1^2}{2gL}$\\ \\
-$\theta = cos^{-1}(0.7961)$\\ \\
+$\theta = cos^{-1}(1 - \cfrac{v_1^2}{2gL})$\\ \\
 \hl{$\theta = 0.65 (rad) = 37.24^{\circ}$}
 \subsection{}
 At the instance where $\theta = 37.24^{\circ}$ \\ \\
-$Fw = mg$\\ \\
-$Fw_c = Fwcos(\theta_2)$\\ \\
+$Fw_c = mgcos(\theta_2)$\\ \\
 $\Sigma F_c = 0 = T - Fw_c$\\ \\
 $T = mgcos(\theta_2)$\\ \\
 \hl{$T = 234.3N$}
-
+\section{}
+Equations for the vertical motion of the ball.\\ \\
+$a_y = g$\\ \\
+$\int dv_y = \int gdt$\\ \\
+$v_y = gt + C $\\ \\
+$v_y=C=t=0$\\ \\
+$v_y = gt$ 
+As the backboard is vertical it should have no affect on $v_y$\\ \\
+$\int dy = \int v_y dt$\\ \\
+$y = \frac{1}{2}gt^2 + C$\\ \\
+$y = h_1$ when $t = 0$\\ \\
+$C = h_1$\\ \\
+$y = \frac{1}{2}gt^2 + h_1$\\ \\
+\\ \\
+Equations for the horizontal motion of the ball.\\ \\
+For $x<d_1$\\ \\
+$v_x = v_0$\\ \\
+$x = v_0t + C$\\ \\
+$x = t = C = 0$\\ \\
+$x = v_0t$\\ \\
+When $x = d_1$ then $t = \cfrac{d_1}{v_0}$\\ 
+Such that when $t > \cfrac{d_1}{v_0}$\\ \\
+$x = d_1 - e v_0(t - \cfrac{d_1}{v_0})$ Assuming the velocity of the backboard is negligible after the impact\\ \\
+Solving for $v_0$ when $x = d_2$ and $y = h_2$\\ \\
+When $x = d_2$ \\ \\
+$d_2 = d_1 - e v_0(t - \cfrac{d_1}{v_0})$\\ \\
+$d_1 - d_2 = e v_0 t - e d_1 t$\\ \\
+$v_0 = \cfrac{d_1(1 + e) - d_2}{e t}$\\ \\
+where $y = h_2$ \\ \\
+$h_2 = \frac{1}{2}gt^2 + h_1$\\ \\
+$t = \sqrt{\cfrac{2(h_2 - h_1)}{g}}$\\ \\
+Substituting into the equation for $v_0$ gives\\ \\
+$v_0 = \cfrac{d_1(1 + e) - d_2}{e\sqrt{\cfrac{2(h_2 - h_1)}{g}}}$\\ \\
+\hl{$v_0 = 9.572 m/s$}
 \end{document}
